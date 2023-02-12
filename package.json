@@ -1,0 +1,24 @@
+{
+  "name": "distube-bot-spotify",
+  "version": "1.0.0",
+  "description": "A bot which plays music from Distube using Spotify Metadata.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "RafeyGx",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^13.2.0",
+    "dotenv": "^16.0.3",
+    "moment": "^2.29.4",
+    "moment-duration-format": "^2.3.2",
+    "mongoose": "^6.9.1",
+    "node-fetch": "^3.2.6",
+    "signale": "^1.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.6"
+  }
+}
