@@ -1,6 +1,9 @@
 const { readdirSync } = require("fs");
 
 module.exports = async (client) => {
+
+
+
 	const data = [];
 	readdirSync("./src/interactions").forEach((dir) => {
 		const slashCommandFile = readdirSync(`./src/interactions/${dir}/`).filter((files) => files.endsWith(".js"));
@@ -13,12 +16,14 @@ module.exports = async (client) => {
 			if (!slashCommand.description) return console.error(`slashCommandDescriptionError: ${slashCommand.split(".")[0]} application command description is required.`);
 
 			client.slashCommands.set(slashCommand.name, slashCommand);
-			console.log(`[ / ] Slash Command Loaded: ${slashCommand.length}`);
+			console.log(`[ / ] Slash Command Loaded: ${slashCommandFile.length}`);
 			data.push(slashCommand);
 		}
 	});
+	
 	client.on("ready", async () => {
-
+		await client.application.commands.clear();
 		await client.application.commands.set(data).then(() => console.log(`Successfully Loaded All Slash Commands`)).catch((e) => console.log(e));
 	});
+	
 };

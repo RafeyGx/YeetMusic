@@ -1,4 +1,4 @@
-const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, WebhookClient } = require('discord.js');
+const { MessageEmbed, ActionRow, But, WebhookClient } = require('discord.js');
 const { msgcooldown } = require(`${process.cwd()}/src/structures/functions`);
 
 module.exports = {
@@ -18,18 +18,19 @@ module.exports = {
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		let prefix = client.config.prefix;
-		const row = new ActionRowBuilder().addComponents(
+		/*const row = new ActionRowBuilder().addComponents(
 			new ButtonBuilder().setLabel("Github").setURL("https://github.com/RafeyGx/DistubeBot").setStyle("LINK"),
 			new ButtonBuilder().setLabel("Replit").setURL("https://replit.com/@RafeyGx/Distube-Spotify-Music-Bot").setStyle("LINK")
-		)
+		)*/
 
-		const mentionEmbed = new EmbedBuilder()
+		const mentionEmbed = new MessageEmbed()
 			.setColor(client.config.colors.default)
 			.setDescription(`My Prefix for this Server is \`${prefix}\`\nIf you Enjoy using this bot please star the project on Github!`)
 
 		if (message.content.startsWith(`<@${client.user.id}>`) === true) {
 			message.reply({
-				components: [row], embeds: [mentionEmbed]
+				//components: [row], 
+				embeds: [mentionEmbed]
 			})
 		}
 
