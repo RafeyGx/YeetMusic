@@ -5,18 +5,15 @@ const fs = require('fs');
 // <|========================================| Initializing the 
 
 const client = new Client({
-	//shards: "auto",
-	fetchAllMembers: false,
-	//messageCacheMaxSize: 50,
-	//messageCacheLifetime: 60,
-	//messageSweepInterval: 60,
+	shards: "auto",
 	intents: 32767,
 	allowedMentions: {
-		parse: ['users', 'roles', 'everyone'],
-		repliedUser: false
+		parse: ['users', 'roles'],
+		repliedUser: true
 	},
-	failIfNotExists: false,
-    partials: ['MESSAGE', 'CHANNEL', 'REACTION']
+	autoReconnect: true,
+	partials: ['MESSAGE', 'CHANNEL', 'REACTION'],
+	restTimeOffset: 0
 });
 
 module.exports = client;
@@ -36,7 +33,6 @@ client.commands = new Collection();
 client.slashCommands = new Collection();
 client.events = new Collection();
 client.aliases = new Collection();
-//client.cooldowns = new Collection();
 
 if (!client.token) client.token = client.config.token;
 

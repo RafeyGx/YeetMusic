@@ -1,4 +1,4 @@
-const { Client } = require("discord.js");
+//const { InteractionType, WebhookClient } = require('discord.js');
 
 module.exports = {
 	name: "interactionCreate",
@@ -31,4 +31,7 @@ module.exports = {
 			if (command) command.run(client, interaction);
 		}
 	}
-};
+}
+
+
+

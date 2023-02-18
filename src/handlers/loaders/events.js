@@ -18,7 +18,7 @@ module.exports = async (client) => {
 		for (const file of events) {
 			const event = require(`${process.cwd()}/src/events/${dirs}/${file}`);
 			client.on(file.split(".")[0], (...args) => event.run(client, ...args)).setMaxListeners(0);
-			//client.on(file.split(".")[0], (...args) => event.run(client, ...args)).setMaxListeners(0);
+
 		};
 	});
 };

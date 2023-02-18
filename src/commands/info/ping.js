@@ -1,4 +1,4 @@
-const { EmbedBuilder } = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 const moment = require("moment");
 require("moment-duration-format");
 
@@ -29,7 +29,7 @@ module.exports = {
 				return Math.floor((time[0] * 1e9 + time[1]) * 1e-6);
 			}
 
-			const PingEmbed = new EmbedBuilder()
+			const PingEmbed = new MessageEmbed()
 				.setAuthor({ name: "Pong", iconURL: client.user.displayAvatarURL() })
 				.setColor(client.embedColor)
 				.addFields([
