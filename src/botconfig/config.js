@@ -12,9 +12,9 @@ module.exports = {
 		error: "#b34f5a"
 	},
 	webhooks: {
-		ready: "https://discord.com/api/webhooks/1074907642578878594/AFb0BqnvS8UU16LC8g2-5_q2GMa-101oZlnN8beNDSa3DMERXSW9BOxpAX-O-zv_vCc0",
-		error: "https://discord.com/api/webhooks/1074907642578878594/AFb0BqnvS8UU16LC8g2-5_q2GMa-101oZlnN8beNDSa3DMERXSW9BOxpAX-O-zv_vCc0",
-		msgcmd: "https://discord.com/api/webhooks/1074907642578878594/AFb0BqnvS8UU16LC8g2-5_q2GMa-101oZlnN8beNDSa3DMERXSW9BOxpAX-O-zv_vCc0",
-		interactions: "https://discord.com/api/webhooks/1074907642578878594/AFb0BqnvS8UU16LC8g2-5_q2GMa-101oZlnN8beNDSa3DMERXSW9BOxpAX-O-zv_vCc0"
+		ready: process.env.webhook || "",
+		error: process.env.webhook || "",
+		msgcmd: process.env.webhook || "",
+		interactions: process.env.webhook || ""
 	}
 }

@@ -1,5 +1,5 @@
 {
-  "name": "distube-bot-spotify",
+  "name": "distube-bot-",
   "version": "1.0.0",
   "description": "A bot which plays music from Distube using Spotify Metadata.",
   "main": "src/index.js",

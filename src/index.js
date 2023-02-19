@@ -5,6 +5,11 @@ const fs = require('fs');
 // <|========================================| Initializing the 
 
 const client = new Client({
+	ws: {
+		properties: {
+			$browser: "Discord iOS",
+		},
+	},
 	shards: "auto",
 	intents: 32767,
 	allowedMentions: {
@@ -22,8 +27,8 @@ module.exports = client;
 
 /*const { Logger } = require(`./structures/logger.js`);
 client.logger = new Logger({
-	displayTimestamp: true,
-	displayDate: true,
+  displayTimestamp: true,
+  displayDate: true,
 }, client);*/
 
 client.config = require("./botconfig/config.js");

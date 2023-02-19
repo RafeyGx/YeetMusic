@@ -1,4 +1,3 @@
-//const { InteractionType, WebhookClient } = require('discord.js');
 
 module.exports = {
 	name: "interactionCreate",

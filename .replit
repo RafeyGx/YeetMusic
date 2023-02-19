@@ -1,6 +1,6 @@
 entrypoint = "src/index.js"
 
-hidden = [".config", "package-lock.json"]
+hidden = [".config", "package-lock.json", "/src/botconfig/config.js"]
 
 [interpreter]
 command = [

@@ -1,10 +1,4 @@
-const {
-	Client,
-	MessageEmbed,
-	MessageActionRow,
-	MessageButton,
-	WebhookClient,
-} = require("discord.js");
+const { MessageEmbed, MessageActionRow, MessageButton } = require("discord.js");
 
 module.exports = {
 	name: "messageCreate",
@@ -23,27 +17,25 @@ module.exports = {
 
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		//                                                                                                                       //
-		//                                   Memtion Embed                                                                       //
+		//                                   Mention Embed                                                                       //
 		//                                                                                                                       //
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		let prefix = client.config.prefix;
 		const row = new MessageActionRow().addComponents(
 			new MessageButton()
-				.setLabel("Sex?")
-				.setURL("https://discord.gg/")
+				.setLabel("Github")
+				.setURL("https://github.com/RafeyGx/YeetMusic")
 				.setStyle("LINK"),
 			new MessageButton()
-				.setLabel("Sex")
-				.setURL("https://raf.com")
+				.setLabel("Support Server")
+				.setURL("https://discord.gg/")
 				.setStyle("LINK")
 		);
 
 		const mentionEmbed = new MessageEmbed()
 			.setColor("#cc3311")
-			.setDescription(
-				`My Prefix \`${prefix}\`\nMy Dad Went to buy milk but never retured please find him :(((`
-			);
+			.setDescription(`>>> **My Prefix for this server is \`${prefix}\`\nIf you Enjoy Using the bot consider leaving a star in github.**`);
 
 		if (message.content.startsWith(`<@${client.user.id}>`) === true) {
 			message.reply({
@@ -89,10 +81,7 @@ module.exports = {
 		const ownerID = client.config.ownerID;
 
 		if (command.ownerOnly && !ownerID.includes(message.author.id)) {
-			return client.logger.log(
-				`${message.member} can't access owner commands`,
-				"error"
-			);
+			return console.error(`${message.member} can't access owner commands`);
 		}
 
 		if (!command) return;
